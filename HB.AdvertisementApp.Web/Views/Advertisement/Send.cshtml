@@ -1,0 +1,96 @@
+﻿@{
+    ViewData["Title"] = "Send";
+}
+@model AdvertisementAppUserCreateModel
+
+
+<div class="min-vh-100">
+
+    <div class="row mt-5">
+        <h1 class=" text-center mx-auto">Başvuru Yap</h1>
+        <div class="col-md-8 mx-auto">
+
+            <form asp-action="Send" asp-controller="Advertisement" method="post" enctype="multipart/form-data">
+
+                <input  type="hidden" asp-for="AdvertisementId" />
+                <input  type="hidden" asp-for="AppUserId" />
+
+                @if (ViewBag.GenderId == (int)GenderType.Erkek)
+                {
+                    <div class="mb-3">
+
+                        <label class="form-label">Askerlik Durum</label>
+                        <select onchange="setInputVisibility()" class="form-select" asp-for="MilitaryStatusId" asp-items="@ViewBag.MilitaryStatus">
+                            <option selected="true" disabled="disabled">Askerlik Durumunuzu Belirtin</option>
+                        </select>
+                    </div>
+                    <div id="datediv" class="mb-3" style="display:none">
+                        <label class="form-label">Tecil Tarihi Giriniz</label>
+                        <input class="form-control" asp-for="EndDate" type="date" />
+                    </div>
+
+                }
+
+                else
+                {
+
+                    <input type="hidden" asp-for="MilitaryStatusId" value="@((int)MilitaryStatusType.Muaf)" />
+                }
+
+
+                <div class="mb-3">
+                    <label class="form-label">İş Deneyimi</label>
+                    <input class="form-control" asp-for="WorkExperience" />
+                </div> 
+                
+                <div class="mb-3">
+                    <label class="form-label">Cv dosyası</label>
+                    <input  type="file" asp-for="CvFile" />
+                </div>
+
+                <div class="mb-3">
+                   <button type="submit" class="btn btn-primary">başvur</button>
+                </div>
+
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger text-center">
+
+                </div>
+            </form>
+        </div>
+
+           
+    </div>
+
+
+</div>
+
+
+@section Scripts{
+    <script>
+
+        setInputVisibility();
+        function setInputVisibility(){
+
+            var selectElement = document.getElementById("MilitaryStatusId");
+
+            var militaryStatusId = selectElement.value;
+
+            var dateDiv = document.getElementById("datediv");
+
+           if(militaryStatusId==2){
+
+
+                dateDiv.style.display="block";
+                
+           }
+           else{
+                dateDiv.style.display = "none";
+           }
+        }
+
+
+
+    </script>
+
+
+}

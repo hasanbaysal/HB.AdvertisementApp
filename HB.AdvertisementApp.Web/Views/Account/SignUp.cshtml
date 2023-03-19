@@ -1,0 +1,78 @@
+﻿@model UserCreateModel
+
+
+
+<div class="mt-4">
+
+
+    <form asp-action="SignUp" asp-controller="Account" method="post" class="p-4 w-75 mx-auto">
+
+        <div class="text-danger" asp-validation-summary="ModelOnly">
+
+        </div>
+
+        <div class="mb-3">
+
+            <select class="form-select" asp-items="@Model.Genders" asp-for="GenderId">
+
+                <option selected="true" disabled="disabled">Bir Cisniyet Seçiniz</option>
+
+            </select>
+            <span class="text-danger" asp-validation-for="GenderId"></span>
+        </div>
+        <div class="mb-3">
+
+            <label class="form-label" asp-for="Firstname" ></label>
+            <input class="form-control" asp-for="Firstname" />
+            <span class="text-danger" asp-validation-for="Firstname"></span>
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label" asp-for="Surname"></label>
+            <input class="form-control" asp-for="Surname" />
+            <span class="text-danger" asp-validation-for="Surname"></span>
+        </div>
+
+
+        <div class="mb-3">
+
+            <label class="form-label" asp-for="UserName"></label>
+            <input class="form-control" asp-for="UserName" />
+            <span class="text-danger" asp-validation-for="UserName"></span>
+        </div>
+
+
+        <div class="mb-3">
+
+            <label class="form-label" asp-for="PhoneNumber"></label>
+            <input class="form-control" asp-for="PhoneNumber" />
+            <span class="text-danger" asp-validation-for="PhoneNumber"></span>
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label"  asp-for="Password"></label>
+            <input class="form-control" type="password" asp-for="Password" />
+            <span class="text-danger" asp-validation-for="Password"></span>
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label" asp-for="ConfirmPassword"></label>
+            <input class="form-control" type="password" asp-for="ConfirmPassword" />
+            <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+        </div>
+
+        <div class="mb-3">
+
+          
+            <button type="submit" class="btn btn-outline-primary">Kayıt Ol</button>
+        </div>
+
+   
+
+    </form>
+
+
+</div>

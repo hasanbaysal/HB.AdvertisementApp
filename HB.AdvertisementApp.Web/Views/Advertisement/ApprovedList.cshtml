@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewData["Title"] = "ApprovedList";
+}
+@model List<AdvertisementAppUserListDto>
+<h1>ApprovedList</h1>
+
+
+
+
+<div class="min-vh-100">
+
+    @if (Model?.Count > 0)
+    {
+        <div class="row">
+
+            <div class="col-md-10 mx-auto mt-3 p-1">
+                <div class="text-end mb-3">
+
+                    <a class="btn btn-outline-primary" asp-controller="Advertisement" asp-action="List">Yapılan Başvurular</a>
+                    <a class="btn btn-outline-primary" asp-controller="Advertisement" asp-action="RejectedList">reddedilen başvurular</a>
+                </div>
+                <table class="table  table-hover table-striped">
+                    <thead>
+
+                        <tr>
+                            <th>Başvurulan İlan</th>
+                            <th>Başvuran Kişi</th>
+                            <th>Cinsiyet</th>
+                            <th>Başvuru Durumu</th>
+                            <th>Askerlik Durumu</th>
+                            <th>Tecil Bitiş Tarih</th>
+                            <th>İş Deneyimi Süresi</th>
+                            <th>İşlem</th>
+
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+
+                                <td>@item.Advertisement.Title</td>
+                                <td>@item.AppUser.Firstname @item.AppUser.Surname</td>
+                                <td>@item.AppUser.Gender.Definition</td>
+                                <td>@item.AdvertisementAppUserStatus.Definition</td>
+                                <td>@item.MilitaryStatus.Definition</td>
+                                <td>@(item.EndDate == null ? "-" : item.EndDate?.ToString("dddd, dd MMMM yyyy"))</td>
+                                <td>@item.WorkExperience</td>
+                                <td>
+                                   
+
+                                    <a class="btn-outline-warning btn btn-sm"
+                               asp-action="SetStatus"
+                               asp-controller="Advertisement"
+                               asp-route-advertisementAppUserId="@item.Id"
+                               asp-route-type="@((int)AdvertisementAppUserStatusType.Olumsuz)">Reddet</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+
+
+            </div>
+
+        </div>
+
+
+    }
+    else
+    {
+        <div class="text-end my-3 p-1">
+
+            <a class="btn btn-outline-primary" asp-controller="Advertisement" asp-action="List">Yapılan Başvurular</a>
+            <a class="btn btn-outline-primary" asp-controller="Advertisement" asp-action="RejectedList">reddedilen başvurular</a>
+        </div>
+        <div class="text-center mt-3 lead">
+
+            herhangi bir başvuru bulunmamaktadır;
+
+        </div>
+    }
+
+
+</div>

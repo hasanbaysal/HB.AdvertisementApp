@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewData["Title"] = "HumanResource";
+}
+@model List<AdvertisementListDto>
+<div class="mt-5" ></div>
+
+
+
+<div class="min-vh-100">
+
+    <div class="row">
+        <h1 class=" text-center mx-auto">Aktif İlanları</h1>
+        <div class="col-md-8 mx-auto">
+
+
+
+            <div class="accordion" id="accordionExample">
+
+
+                @for (int i = 0; i < Model?.Count; i++)
+                {
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading-@Model[i].Id">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-@Model[i].Id" aria-expanded="@(i==0)" aria-controls="collapseOne">
+                                @Model[i].Title
+                            </button>
+                        </h2>
+                        <div id="collapse-@Model[i].Id" class="accordion-collapse collapse @(i==0?"show":"")" aria-labelledby="heading-@Model[i].Id" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                @Html.Raw( @Model[i].Description)
+                                <p>
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                                        <a class="btn btn-outline-primary" asp-controller="Advertisement" asp-route-advertisementId="@Model[i].Id" asp-action="Send">Başvur</a>
+                                    }
+                                    else
+                                    {
+                                        <div class="alert alert-light text-center lead">
+                                            Başvuru yapmak için oturum açmanız gerekmektedir
+                                            <a asp-action="SignIn" asp-controller="Account" >Giriş Yap</a>
+                                        </div>
+                                    }
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

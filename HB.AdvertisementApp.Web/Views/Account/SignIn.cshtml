@@ -1,0 +1,49 @@
+﻿@model AppUserLoginDto
+
+
+
+<div class="mt-4 min-vh-100">
+
+
+    <form asp-action="SignIn" asp-controller="Account" method="post" class="p-4 w-75 mx-auto">
+
+        <div class="text-danger" asp-validation-summary="ModelOnly">
+        </div>
+
+
+        <div class="mb-3">
+
+            <label class="form-label" asp-for="UserName"></label>
+            <input class="form-control" asp-for="UserName" />
+            <span class="text-danger" asp-validation-for="UserName"></span>
+        </div>
+
+
+
+        <div class="mb-3">
+
+            <label class="form-label" asp-for="Password"></label>
+            <input class="form-control" type="password" asp-for="Password" />
+            <span class="text-danger" asp-validation-for="Password"></span>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" asp-for="RememberMe" >
+            <label class="form-check-label" asp-for="RememberMe" >
+               Beni Hatırla
+            </label>
+        </div>
+
+        <div class="mb-3">
+            
+            <img onload="" onloadstart=""/>
+
+            <button type="submit" class="btn btn-outline-primary">Giriş Yap</button>
+        </div>
+
+
+
+    </form>
+
+
+</div>

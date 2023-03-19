@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HB.AdvertisementApp.Common", "HB.AdvertisementApp.Common\HB.AdvertisementApp.Common.csproj", "{1B2BB70E-2BB1-4083-AC36-B8AF923CD147}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HB.AdvertisementApp.Entities", "HB.AdvertisementApp.Entities\HB.AdvertisementApp.Entities.csproj", "{9AD4D9F4-78BF-47E9-B07E-7A087EA1E193}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HB.AdvertisementApp.DataAccess", "HB.AdvertisementApp.DataAccess\HB.AdvertisementApp.DataAccess.csproj", "{BBB3F9AF-5422-4963-AF0C-82452BAA87C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HB.AdvertisementApp.Business", "HB.AdvertisementApp.Business\HB.AdvertisementApp.Business.csproj", "{DDF202F9-BB7B-46D0-AA6B-EEB2FA78539F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HB.AdvertisementApp.Web", "HB.AdvertisementApp.Web\HB.AdvertisementApp.Web.csproj", "{1BC6C0CE-A015-497C-BA97-88AEF666C2C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HB.AdvertisementApp.Dtos", "HB.AdvertisementApp.Dtos\HB.AdvertisementApp.Dtos.csproj", "{B14D19AA-B96F-4E5D-B577-C24DDC82300B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B2BB70E-2BB1-4083-AC36-B8AF923CD147}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B2BB70E-2BB1-4083-AC36-B8AF923CD147}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B2BB70E-2BB1-4083-AC36-B8AF923CD147}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B2BB70E-2BB1-4083-AC36-B8AF923CD147}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AD4D9F4-78BF-47E9-B07E-7A087EA1E193}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AD4D9F4-78BF-47E9-B07E-7A087EA1E193}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AD4D9F4-78BF-47E9-B07E-7A087EA1E193}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AD4D9F4-78BF-47E9-B07E-7A087EA1E193}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBB3F9AF-5422-4963-AF0C-82452BAA87C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBB3F9AF-5422-4963-AF0C-82452BAA87C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBB3F9AF-5422-4963-AF0C-82452BAA87C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBB3F9AF-5422-4963-AF0C-82452BAA87C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDF202F9-BB7B-46D0-AA6B-EEB2FA78539F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDF202F9-BB7B-46D0-AA6B-EEB2FA78539F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDF202F9-BB7B-46D0-AA6B-EEB2FA78539F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDF202F9-BB7B-46D0-AA6B-EEB2FA78539F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BC6C0CE-A015-497C-BA97-88AEF666C2C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BC6C0CE-A015-497C-BA97-88AEF666C2C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BC6C0CE-A015-497C-BA97-88AEF666C2C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BC6C0CE-A015-497C-BA97-88AEF666C2C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B14D19AA-B96F-4E5D-B577-C24DDC82300B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B14D19AA-B96F-4E5D-B577-C24DDC82300B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B14D19AA-B96F-4E5D-B577-C24DDC82300B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B14D19AA-B96F-4E5D-B577-C24DDC82300B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BAA9021C-1F90-44E7-B746-A4ECC1C8FF5E}
+	EndGlobalSection
+EndGlobal

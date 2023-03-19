@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>İş İlanlarım</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Temastyles.css" asp-append-version="true" />
+    @await RenderSectionAsync("sitecss", required: false)
+
+</head>
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg   @(User.Identity!.IsAuthenticated && User.IsInRole("Admin")?"navbar-dark bg-danger":"navbar-dark  navbar-custom" ) ">
+        <div class="container px-5">
+            <a class="navbar-brand" href="#page-top">İş İlanları</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                 
+                    @if (User.Identity!.IsAuthenticated)
+                    {
+
+
+                        @if (User.IsInRole("Member"))
+                        {
+                            <li class="nav-item"><a class="nav-link" asp-action="HumanResource" asp-controller="Home">Açık Pozisyonlar</a></li>
+                        }
+
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item"><a class="nav-link" asp-controller="Advertisement" asp-action="List">Başvurular </a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Application" asp-action="List">İş İlanlarını Yönet </a></li>
+                        }
+
+
+
+                       
+                        <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="LogOut">Çıkış Yap</a></li>
+                        
+                        
+                        
+                     
+                  
+                    }
+                    else
+                    {
+                        <li class="nav-item"><a class="nav-link" asp-action="HumanResource" asp-controller="Home">Açık Pozisyonlar</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="SignUp">Kayıt Ol</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="SignIn">Giriş Yap</a></li>
+                    }
+
+                  
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Header-->
+
+
+
+
+
+        @RenderBody();
+
+
+
+
+
+
+    <!-- Footer-->
+    <footer class="py-5 bg-black">
+        <div class="container px-5">
+            <p class="m-0 text-center text-white small">Copyright &copy; Hasan Baysal Asp.net Core MVC 
+                <a target="_blank" class="btn bnt-link text-white text-decoration-underline" href="https://github.com/hasanbaysal"> 
+                    <i class="me-1 fa-brands fa-github"></i>
+                    Github Hesabım
+                    </a></p>
+           
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
